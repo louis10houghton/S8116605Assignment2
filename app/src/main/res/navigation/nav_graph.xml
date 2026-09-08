@@ -10,10 +10,11 @@
         android:name="com.example.s8116605assignment2.ui.login.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
-
-        <action android:id="@+id/action_login_to_dashboard"
-            app:destination="@+id/DashboardFragment"/>
+        <action
+            android:id="@+id/action_login_to_dashboard"
+            app:destination="@id/dashboardFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.example.s8116605assignment2.ui.dashboard.DashboardFragment"

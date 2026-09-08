@@ -15,8 +15,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.s8116605assignment2.databinding.FragmentLoginBinding
+import androidx.navigation.fragment.findNavController
+
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 
 import com.example.s8116605assignment2.R
@@ -117,9 +121,9 @@ class LoginFragment : Fragment() {
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
-        findNavController().navigate(R.id.action_login_to_dashboard)
+        val bundle = bundleOf("keypass" to model.keypass)
+        findNavController().navigate(R.id.action_login_to_dashboard, bundle)
     }
-
     private fun showLoginFailed(@StringRes errorString: Int) {
         val appContext = context?.applicationContext ?: return
         Toast.makeText(appContext, errorString, Toast.LENGTH_LONG).show()
