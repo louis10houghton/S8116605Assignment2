@@ -25,6 +25,14 @@ import androidx.navigation.fragment.findNavController
 
 import com.example.s8116605assignment2.R
 
+
+/**
+ * The login screen. Collects user input using view binding from XML, observes the
+ * LoginViewModel for validation and result state, shows errors, and
+ * navigates to the Dashboard (passing the keypass) is login is successful
+ */
+
+
 class LoginFragment : Fragment() {
 
     private lateinit var loginViewModel: LoginViewModel
@@ -121,6 +129,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
+        //navigate to the dashboard screen UI
         val bundle = bundleOf("keypass" to model.keypass)
         findNavController().navigate(R.id.action_login_to_dashboard, bundle)
     }
