@@ -11,13 +11,9 @@ import com.example.s8116605assignment2.network.services.Nit3213Api
 import com.example.s8116605assignment2.network.utilities.RetrofitUtility
 import kotlinx.coroutines.launch
 
-class DashboardViewModel : ViewModel() {
-
-    private val repository = DashboardRepository(
-        RetrofitUtility.createRetrofit("https://nit3213apinew.onrender.com/")
-            .create(Nit3213Api::class.java)
-    )
-
+class DashboardViewModel(
+    private val repository: DashboardRepository
+) : ViewModel() {
     private val _entities = MutableLiveData<List<Entity>>()
     val entities: LiveData<List<Entity>> = _entities
 

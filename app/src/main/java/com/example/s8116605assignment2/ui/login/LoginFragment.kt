@@ -1,7 +1,6 @@
 package com.example.s8116605assignment2.ui.login
 
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import android.os.Bundle
@@ -11,17 +10,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.s8116605assignment2.databinding.FragmentLoginBinding
-import androidx.navigation.fragment.findNavController
 
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 import com.example.s8116605assignment2.R
 
@@ -35,7 +30,7 @@ import com.example.s8116605assignment2.R
 
 class LoginFragment : Fragment() {
 
-    private lateinit var loginViewModel: LoginViewModel
+    private val loginViewModel: LoginViewModel by viewModel()
     private var _binding: FragmentLoginBinding? = null
 
     // This property is only valid between onCreateView and
@@ -47,7 +42,6 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -55,9 +49,6 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
-            .get(LoginViewModel::class.java)
-
         val usernameEditText = binding.username
         val passwordEditText = binding.password
         val loginButton = binding.login

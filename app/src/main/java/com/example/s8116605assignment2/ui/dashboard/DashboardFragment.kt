@@ -7,18 +7,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.s8116605assignment2.R
 import com.example.s8116605assignment2.databinding.FragmentDashboardBinding
-
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: DashboardViewModel by viewModels()
+    private val viewModel: DashboardViewModel by viewModel()
     private lateinit var adapter: EntityAdapter
 
     override fun onCreateView(

@@ -47,12 +47,14 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 
+    //navigation + livedata dependencies
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
+    //navigation dependencies
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-moshi:3.0.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
@@ -60,4 +62,13 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:5.5.0")
     implementation("androidx.recyclerview:recyclerview:1.4.0")
+
+    //koin dependencies
+    implementation("io.insert-koin:koin-android:4.0.4")
+
+    // Unit testing
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("io.mockk:mockk:1.13.12")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
 }
