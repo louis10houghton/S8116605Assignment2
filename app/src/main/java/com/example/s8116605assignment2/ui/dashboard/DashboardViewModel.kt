@@ -7,8 +7,6 @@ import androidx.lifecycle.viewModelScope
 
 import com.example.s8116605assignment2.network.model.Entity
 import com.example.s8116605assignment2.network.data.DashboardRepository
-import com.example.s8116605assignment2.network.services.Nit3213Api
-import com.example.s8116605assignment2.network.utilities.RetrofitUtility
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(
